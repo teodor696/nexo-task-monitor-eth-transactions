@@ -2,7 +2,9 @@
 
 CAUTION! Unfortunately the program can't perform the task, because the code is still unfinished. The lifecyle of the program is not complete. For now you can only use the api to create a configuration and send a messsage in kafka
 
-My idea was to create an api which when a new configuration is created/updated/deleted to send a kafka message to the sync program, where it will initialize new model with the newly created/updated configuration (In order to not restart the program manualy). And if the configurations were somewhat wrong and throw error, because of bad writing, or any other error occurs that would stop the program, when the program fall I would be using some kind of cache (my choice was redis) so I can find which was the previous configuration.
+My idea was to create an api which when a new configuration is created/updated/deleted to send a kafka message to the sync program, where it will initialize new model with the newly created/updated configuration (In order to not restart the program manualy). And if the configurations were somewhat wrong and throw error, because of bad writing, or any other error occurs that would stop the program, when the program fall I would be using some kind of cache (my choice was redis) so I can find which was the previous configuration. My biggest time consumer was the sequelize library and some SQL topics. I have no experience in using ORM based libraries and the syntax of this one was something pretty new to me, and implementing SQL-related code overall. (But I am pretty satisfied from what I'va managed to write for that short time :D)
+
+The task description had some missings, the biggest one, in my opinion, was that the Configuration was not described very good. I've spent quite some time trying to picture out what you mean. It was very abstract definition.
 
 ## Technologies used: ##
  * Redis, Kafka, PostgreSQL, Nodejs;
